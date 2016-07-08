@@ -1,4 +1,3 @@
-package com.tiangxi.business.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,12 +7,8 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.tiangxi.business.R;
-import com.tiangxi.business.utils.DensityUtils;
-
 /**
- * Created by SB on 2016/7/8.
+ * Created by luenghw on 2016/7/8.
  */
 public class TextIconView extends LinearLayout {
     private int mTextIcon;
@@ -32,8 +27,8 @@ public class TextIconView extends LinearLayout {
         TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.TextIconView, 0, 0);
         try {
             mText = typedArray.getString(R.styleable.TextIconView_text);
-            mIconSize = typedArray.getDimension(R.styleable.TextIconView_iconSize, 0);
-            mTextSize = typedArray.getDimension(R.styleable.TextIconView_textSize, 0);
+            mIconSize = typedArray.getDimensionPixelSize(R.styleable.TextIconView_iconSize, 0);
+            mTextSize = typedArray.getDimensionPixelSize(R.styleable.TextIconView_textSize, 0);
             mTextIcon = typedArray.getResourceId(R.styleable.TextIconView_textIcon, 0);
             mTextColor = typedArray.getColor(R.styleable.TextIconView_textColor, 0xff333333);
         } catch (Exception e) {
@@ -67,22 +62,22 @@ public class TextIconView extends LinearLayout {
     }
 
     public void setText(String text) {
-        mText = text;
+        mTextView.setText(text);
         invalidate();
     }
 
     public void setTextIcon(int iconRes) {
-        mTextIcon = iconRes;
+        mIconView.setImageResource(iconRes);
         invalidate();
     }
 
     public void setIconSize(float iconSize) {
-        mIconSize = iconSize;
+        mIconView.setLayoutParams(new LinearLayout.LayoutParams(DensityUtils.dp2px(mContext, iconSize), DensityUtils.dp2px(mContext, iconSize)));
         invalidate();
     }
 
     public void setTextColor(int textColor) {
-        mTextColor = textColor;
+        mTextView.setTextColor(textColor);
         invalidate();
     }
 }
