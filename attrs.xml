@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextIconView">
+        <attr name="textSize" format="dimension" />
+        <attr name="iconSize" format="dimension" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="text" format="string" />
+        <attr name="textIcon" format="reference" />
+    </declare-styleable>
+</resources>
