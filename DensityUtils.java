@@ -5,7 +5,7 @@ import android.util.TypedValue;
 
 
 /**
- * Created by SB on 2016/7/6.
+ * Created by luenghw on 2016/7/6.
  */
 public class DensityUtils {
   private DensityUtils() {
